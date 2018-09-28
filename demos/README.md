@@ -467,14 +467,14 @@ $ npm init -y
 
 `package.json`是项目的配置文件。
 
-（3）安装`jquery`和`webpack`这两个模块。
+（3）安装`jquery`、`webpack`、`webpack-cli`这三个模块。
 
 ```bash
 $ npm install -S jquery
-$ npm install -S webpack
+$ npm install -S webpack webpack-cli
 ```
 
-打开`package.json`文件，会发现`jquery`和`webpack`都加入了`dependencies`字段，并且带有版本号。
+打开`package.json`文件，会发现`jquery`、`webpack`和`webpack-cli`都加入了`dependencies`字段，并且带有版本号。
 
 （4）在项目根目录下，新建一个网页文件`index.html`。
 
@@ -500,7 +500,7 @@ $('h1').css({ color: 'red'});
 
 ```javascript
 "scripts": {
-  "build": "webpack app.js bundle.js",
+  "build": "webpack --mode production ./app.js -o ./bundle.js",
   "test": "...."
 },
 ```
@@ -650,8 +650,12 @@ $ node app1.js
 # Linux & Mac
 $ PORT=7070 node app1.js
 
-# windows
+# windows cmd / (git cmd)
 $ set PORT=7070
+$ node app1.js
+
+# windows powershell
+$ $env:PORT=7070
 $ node app1.js
 ```
 
